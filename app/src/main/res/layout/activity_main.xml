@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/fab"
+        android:layout_width="81dp"
+        android:layout_height="74dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/gotosettings" />
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/Heading" />
+
+    <EditText
+        android:id="@+id/containmentInput"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/text1"
+        android:layout_marginTop="2dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/enter_your_info"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btncamera_id"
+        android:layout_marginTop="4dp"
+        android:text="@string/textfieldcontains" />
+
+    <ImageView
+        android:id="@+id/qrCodeOutput"
+        android:layout_width="147dp"
+        android:layout_height="111dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="480dp"
+        android:contentDescription="l" />
+
+    <Button
+        android:id="@+id/qrCodeGen"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="600dp"
+        android:enabled="false"
+        android:text="@string/generate_qr_code" />
+
+
+    <Button
+        android:id="@+id/btncamera_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_marginTop="2dp"
+        android:text="@string/cameraButton" />
+
+    <ImageView
+        android:id="@+id/PictureView4"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_below="@id/btncamera_id"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="349dp"
+        android:layout_marginEnd="188dp" />
+
+    <ImageView
+        android:id="@+id/PictureView2"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_below="@id/btncamera_id"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="188dp" />
+
+    <ImageView
+        android:id="@+id/PictureView1"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_below="@id/btncamera_id"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="297dp" />
+
+    <ImageView
+        android:id="@+id/PictureView3"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_below="@id/btncamera_id"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="349dp"
+        android:layout_marginEnd="297dp" />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/btncamera_id"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="523dp"
+        android:enabled="false"
+        android:text="@string/uploadButton" />
+
+    <TextView
+        android:id="@+id/amountofitemsheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/containmentInput"
+        android:layout_marginTop="5dp"
+        android:text="@string/itemofcontain" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/amountofitemsheading"
+        android:layout_marginTop="6dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Only Numbers" />
+
+
+</RelativeLayout>
