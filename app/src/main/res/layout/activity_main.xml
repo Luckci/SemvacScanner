@@ -18,8 +18,10 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/gotosettings" />
-
+        android:contentDescription="@string/gotosettings"
+        android:text="SETTINGS"
+        android:textSize="8dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/text"
