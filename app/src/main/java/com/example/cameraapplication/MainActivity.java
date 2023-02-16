@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         containmentInput = findViewById(R.id.containmentInput);
         numberofitems = findViewById(R.id.editTextNumber);
 
-        floatingactionbutton = (Button) findViewById(R.id.fab);
+        floatingactionbutton = findViewById(R.id.fab);
         floatingactionbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         uploadbutton.setOnClickListener(new View.OnClickListener(){
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            final Bitmap photo = (Bitmap) data.getExtras().get("data");
             @Override
             public void onClick(View view) {
                 ByteArrayOutputStream byteArrayOutputStream;
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     byte[] bytes = byteArrayOutputStream.toByteArray();
 
                     final String base64Image = Base64.encodeToString(bytes, Base64.DEFAULT);
-                    final EditText inputString = (EditText) findViewById(R.id.containmentInput);
+                    final EditText inputString = findViewById(R.id.containmentInput);
 
                     RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                     String keyip = getIntent().getStringExtra("keyip");

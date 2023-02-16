@@ -1,48 +1,41 @@
 package com.example.cameraapplication;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceFragmentCompat;
-
 public class SettingsActivity extends AppCompatActivity {
-
-    private EditText ipinput;
-    private Button savebutton;
-
-    public String ipaddress;
+    private EditText ipEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity_menu);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+
+        // Get a reference to the EditText view
+        ipEditText = findViewById(R.id.ip_of_server_input);
+
+        // Get the server IP address from SharedPreferences
+        SharedPreferences sharedPref = getSharedPreferences("my_settings", Context.MODE_PRIVATE);
+        String serverIP = sharedPref.getString("server_ip", null);
+
+        // If the server IP is present in SharedPreferences, display it in the EditText
+        if (serverIP != null) {
+            ipEditText.setText(serverIP);
         }
-
-        ipinput = findViewById(R.id.ip_of_server_input);
-        savebutton = findViewById(R.id.save_bt);
-
-        savebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ipaddress = ipinput.getText().toString();
-
-                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
-                intent.putExtra("keyip",ipaddress);
-
-                startActivity(intent);
-            }
-        });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
 
-
-
+        // Save the server IP address to SharedPreferences
+        String serverIP = ipEditText.getText().toString();
+        SharedPreferences sharedPref = getSharedPreferences("my_settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("server_ip", serverIP);
+        editor.apply();
+    }
 }
